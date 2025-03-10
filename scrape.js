@@ -16,6 +16,7 @@ const getQuotes = async () => {
     const quotes = await page.evaluate(() => {
         const title = document.querySelector(".main-title-listing")?.innerText.trim() || "Title not found";
         const price = document.querySelector(".price-heading")?.innerText.trim() || "Price not found";
+        const imgElement = document.querySelector(".image-class-selector");
         const image = imgElement?.getAttribute("src") || imgElement?.getAttribute("data-src") || "Image not found";
 
         return { title, price, image };
