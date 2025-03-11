@@ -12,7 +12,6 @@ const getQuotes = async () => {
         waitUntil: "domcontentloaded",
     });
 
-    // Evaluacija na stranici
     const quotes = await page.evaluate(() => {
         const title = document.querySelector(".main-title-listing")?.innerText.trim() || "Title not found";
         const price = document.querySelector(".price-heading")?.innerText.trim() || "Price not found";
